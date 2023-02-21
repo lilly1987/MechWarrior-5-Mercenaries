@@ -1,0 +1,19 @@
+{
+	"Unlocked": [
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:A1M1_SupplyRun_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:A1M2_Recon_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:A1M3_Offensive_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:A1M4_Defender_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:A2M1_InfernoCaptain1_Scenario"
+		}
+	]
+}

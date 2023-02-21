@@ -1,0 +1,3044 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>118</ID>
+      <Description>"-- Disable CE HotKeys LUA script"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+getHotkeyHandlerThread().State='htsDisabled'
+
+[DISABLE]
+{$lua}
+getHotkeyHandlerThread().State='htsActive'
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26651</ID>
+      <Description>"Mechwarrior 5 1.1.335 AOB script"</Description>
+      <Options moHideChildren="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript Async="1">// Game Executable   : MechWarrior-Win64-Shipping.exe
+// Author            : Cs
+// Executable Version: 4.26.2.0
+// Module Version    :
+// Script Date       : 2023-01-26
+// Created with      : customAOBInjectionTemplates version: 1.3.9
+[ENABLE]
+// Here's the define for the Pilot Skill hotkey.
+// It is CTRL (0x11) by default. Check this page for other scan codes:
+// https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+define(PilotSkillKey,11)
+
+aobscanmodule(aobPlayerControllerGrabber,MechWarrior-Win64-Shipping.exe,80 B9 ?? ?? 00 00 00 48 8B D9 75 ?? E8 ?? ?? ?? ?? 83 F8 01)
+aobscanmodule(aobControllerPawnOffset,MechWarrior-Win64-Shipping.exe,48 3B 83 ?? ?? 00 00 B9 01 00 00 00)
+aobscanmodule(aobPawnMovementOffset,MechWarrior-Win64-Shipping.exe,48 8B 89 ?? ?? 00 00 48 85 C9 0F 84 ?? ?? ?? ?? F6 ?? ?? ?? 00 00 04)
+aobscanmodule(aobPawnAllyOffset,MechWarrior-Win64-Shipping.exe,0F B6 87 ?? ?? 00 00 48 8B 5C 24 ?? 48 8B 74 24 ?? 48 83 C4 ?? 5F C3 48 8B)
+aobscanmodule(aobWpnCooldownPawnOffset,MechWarrior-Win64-Shipping.exe,48 8B 9B ?? ?? 00 00 83 FE 01 75 ?? 40)
+aobscanmodule(aobActorChildrenOffset,MechWarrior-Win64-Shipping.exe,48 8B 87 ?? ?? 00 00 48 89 1C F0 48 8B 74 24 ?? F6 43 ?? 10)
+aobscanmodule(aobMoveSpeedCalc,MechWarrior-Win64-Shipping.exe,74 ?? F3 0F 10 83 ?? ?? 00 00 ?? ?? ?? ?? ?? C3 F3 0F 10 83 ?? ?? 00 00)
+aobscanmodule(aobJumpSpeedCalc,MechWarrior-Win64-Shipping.exe,F3 0F 10 83 ?? ?? 00 00 45 33 C0 F3 0F 5F 83 ?? ?? 00 00)
+aobscanmodule(aobCashReader,MechWarrior-Win64-Shipping.exe,48 8B 81 ?? ?? 00 00 48 89 02 48 8B C2 C3 ?? ?? 48 89 6C 24)
+aobscanmodule(aobPilotSkillEnumerator,MechWarrior-Win64-Shipping.exe,88 ?? ?? ?? 00 00 48 8B 83 ?? ?? 00 00 48 89 87 ?? ?? 00 00 48 8B 83 ?? ?? 00 00 48 89 87 ?? ?? 00 00 E8 ?? ?? ?? ?? 48)
+aobscanmodule(aobMechTonnageCalc,MechWarrior-Win64-Shipping.exe,FF 15 ?? ?? ?? ?? F3 0F 59 05 ?? ?? ?? ?? 0F 28 B4 24 ?? ?? 00 00)
+aobscanmodule(aobEquipmentCountReader,MechWarrior-Win64-Shipping.exe,41 8B 46 ?? 49 83 C4 ?? 89 41 ?? 49)
+//LuaCall(find_Nth_Result_AOB('aobWeaponCountReader',2,[=[aobEquipmentCountReader]=],"41 8B 46 ?? 49 83 C4 ?? 89 41 ?? 49"))
+aobscanmodule(aobDaysPassedGrabber,MechWarrior-Win64-Shipping.exe,0F 57 C9 66 0F 6E 82 ?? ?? 00 00 F3 0F E6 C0)
+aobscanmodule(aobDaysUpdater,MechWarrior-Win64-Shipping.exe,01 91 ?? ?? 00 00 48 81 C1 ?? ?? 00 00 89)
+aobscanmodule(aobJobReader,MechWarrior-Win64-Shipping.exe,8B 81 ?? ?? 00 00 85 C0 7F ?? 48 8B 41)
+aobscanmodule(aobRefitTimeCalc,MechWarrior-Win64-Shipping.exe,F3 0F 59 89 ?? ?? 00 00 F3 0F 58 C9 F3 0F 5C C1 F3 0F 2D C0 D1 F8 F7 D8 C3)
+aobscanmodule(aobRefitCostCalc,MechWarrior-Win64-Shipping.exe,F3 0F 58 D1 F3 0F 5C C2 F3 0F 2D C0 D1 F8 F7 D8 C3)
+aobscanmodule(aobUpgradeTimeCalc,MechWarrior-Win64-Shipping.exe,48 8B 5C 24 ?? F3 0F 5C C1 F3 0F 2D C0)
+aobscanmodule(aobDeployTonsChecker,MechWarrior-Win64-Shipping.exe,41 8B 8D ?? ?? 00 00 41 03 8D ?? ?? 00 00 3B C1 0F 8E)
+aobscanmodule(aobContractDetailsGrabber1,MechWarrior-Win64-Shipping.exe,48 8B CB 89 7C 24 ?? 48 89 7B ?? 48 39 7B ?? 74 10 48 8B 53 ?? 4C 8D 44 24 ?? E8 ?? ?? ?? ?? EB 1C 4C 8B 83 ?? ?? 00 00 48 8D 54 24 ?? 49 8B 40 ?? 48 89 83 ?? ?? 00 00 E8 ?? ?? ?? ?? 48 8B 43 ?? 4C 8D 44 24 ?? 8B 54 24 ?? 48 85 C0 48 8B CE 4C 0F 45 C0 48 8B 43 ?? 48 85 C0 40 0F 95 C7 48 03 F8 48 89 7B ?? E8 ?? ?? ?? ?? 48 8B 5C 24 ?? 48 8B 74 24 ?? 48 83 C4 ?? 5F C3)
+//LuaCall(find_Nth_Result_AOB('aobContractDetailsGrabber2',2,[=[aobContractDetailsGrabber1]=],"48 8B CB 89 7C 24 ?? 48 89 7B ?? 48 39 7B ?? 74 10 48 8B 53 ?? 4C 8D 44 24 ?? E8 ?? ?? ?? ?? EB 1C 4C 8B 83 ?? ?? 00 00 48 8D 54 24 ?? 49 8B 40 ?? 48 89 83 ?? ?? 00 00 E8 ?? ?? ?? ?? 48 8B 43 ?? 4C 8D 44 24 ?? 8B 54 24 ?? 48 85 C0 48 8B CE 4C 0F 45 C0 48 8B 43 ?? 48 85 C0 40 0F 95 C7 48 03 F8 48 89 7B ?? E8 ?? ?? ?? ?? 48 8B 5C 24 ?? 48 8B 74 24 ?? 48 83 C4 ?? 5F C3"))
+aobscanmodule(aobSalvageMaxer,MechWarrior-Win64-Shipping.exe,8B D8 E8 ?? ?? ?? ?? 2B C3 48 8B 5C 24 ?? 48 83 C4 ?? 5F C3)
+aobscanmodule(aobPMMSalvageOffset,MechWarrior-Win64-Shipping.exe,8B 8F ?? ?? 00 00 44 8B C3 03)
+aobscanmodule(aobMechCooldownCalc,MechWarrior-Win64-Shipping.exe,F3 0F 58 81 ?? ?? 00 00 F3 0F 58 81 ?? ?? 00 00 0F 2F C1 73 03 0F 57 C0 F3 0F 59 81 ?? ?? 00 00 C3)
+aobscanmodule(aobTopSpeedCalc,MechWarrior-Win64-Shipping.exe,F3 0F 10 B9 ?? ?? 00 00 F3 0F 58 ?? ?? ?? ?? ?? 48 85 DB 74 ?? E8)
+//LuaCall(find_Nth_Result_AOB('aobReverseTopSpeedCalc',2,[=[aobTopSpeedCalc]=],"F3 0F 10 B9 ?? ?? 00 00 F3 0F 58 ?? ?? ?? ?? ?? 48 85 DB 74 ?? E8"))
+aobscanmodule(aobJJFuelCalc,MechWarrior-Win64-Shipping.exe,0F 28 D1 F3 41 0F 5C D1 F3 0F 10 00 41)
+aobscanmodule(aobJJSpeedCalc,MechWarrior-Win64-Shipping.exe,48 8B 87 ?? ?? 00 00 F3 0F 11 45 ?? 48 85 C0)
+aobscanmodule(aobAmmoCalc,MechWarrior-Win64-Shipping.exe,8B 89 ?? ?? 00 00 41 8B ?? 2B ?? BE)
+aobscanmodule(aobWeaponCooldownCalc,MechWarrior-Win64-Shipping.exe,F3 0F 5C D6 0F 2F D0 F3 0F 11 93 ?? ?? 00 00 77 ?? 48 8D)
+aobscanmodule(aobRecoilCalc,MechWarrior-Win64-Shipping.exe,F3 0F 10 81 ?? ?? 00 00 45 33 ?? 0F 29)
+aobscanmodule(aobDamageCalc,MechWarrior-Win64-Shipping.exe,48 8B 81 ?? ?? 00 00 0F 28 E2 44 0F B6 80)
+aobscanmodule(aobScanTimeCalc,MechWarrior-Win64-Shipping.exe,F3 0F 58 B3 ?? ?? 00 00 F3 0F 10 8B ?? ?? 00 00 0F 57 ?? 0F 2F)
+aobscanmodule(aobSensorRangeCalc1,MechWarrior-Win64-Shipping.exe,F3 0F 58 05 ?? ?? ?? ?? F3 0F 59 C2 F3 0F 11 45)
+aobscanmodule(aobSensorRangeCalc2,MechWarrior-Win64-Shipping.exe,F3 0F 58 05 ?? ?? ?? ?? 48 8B 91 ?? ?? 00 00 48 8D 4C 24 ?? F3 0F 59 C1)
+aobscanmodule(aobProjectileSpeedCalc,MechWarrior-Win64-Shipping.exe,F3 0F 58 87 B8 02 00 00)
+aobscanmodule(aobWeaponDamageCalc,MechWarrior-Win64-Shipping.exe,F3 0F 59 87 AC 02 00 00)
+aobscanmodule(aobFactionDataGrabber,MechWarrior-Win64-Shipping.exe,48 8B 9E ?? ?? 00 00 48 8D ?? ?? 48 8D 34 93 48 3B)
+
+alloc(newmemPlayerControllerGrabber,8192,aobPlayerControllerGrabber)
+
+label(aobPlayerControllerGrabber_r)
+label(aobPlayerControllerGrabber_i)
+registersymbol(aobPlayerControllerGrabber_r)
+registersymbol(aobPlayerControllerGrabber_i)
+
+label(lblPlayerControllerGrabber)
+label(lblPlayerControllerGrabberSkip)
+label(lblPlayerControllerGrabberRet)
+
+label(pPlayerController)
+label(pPlayerPawn)
+label(pPlayerMovement)
+registersymbol(pPlayerController)
+registersymbol(pPlayerPawn)
+registersymbol(pPlayerMovement)
+
+label(iControllerPawnOffset)
+label(iPawnMovementOffset)
+label(iPawnAllyOffset)
+label(iWpnCooldownPawnOffset)
+label(iActorChildrenOffset)
+registersymbol(iControllerPawnOffset)
+registersymbol(iPawnMovementOffset)
+registersymbol(iPawnAllyOffset)
+registersymbol(iWpnCooldownPawnOffset)
+registersymbol(iActorChildrenOffset)
+
+label(aobMoveSpeedCalc_r)
+label(aobMoveSpeedCalc_i)
+registersymbol(aobMoveSpeedCalc_r)
+registersymbol(aobMoveSpeedCalc_i)
+
+label(lblMoveSpeedCalc)
+label(lblMoveSpeedCalcSkip)
+label(lblMoveSpeedCalcRet)
+
+label(bEnableMoveSpeedMod)
+label(fMoveSpeedMod)
+registersymbol(bEnableMoveSpeedMod)
+registersymbol(fMoveSpeedMod)
+
+label(aobJumpSpeedCalc_r)
+label(aobJumpSpeedCalc_i)
+registersymbol(aobJumpSpeedCalc_r)
+registersymbol(aobJumpSpeedCalc_i)
+
+label(lblJumpSpeedCalc)
+label(lblJumpSpeedCalcSkip)
+label(lblJumpSpeedCalcRet)
+
+label(bEnableJumpSpeedMod)
+label(fJumpSpeedMod)
+registersymbol(bEnableJumpSpeedMod)
+registersymbol(fJumpSpeedMod)
+
+label(aobCashReader_r)
+label(aobCashReader_i)
+registersymbol(aobCashReader_r)
+registersymbol(aobCashReader_i)
+
+label(lblCashReader)
+label(lblCashReaderSkip)
+label(lblCashReaderRet)
+
+label(bEnableMinCash)
+label(iMinCash)
+registersymbol(bEnableMinCash)
+registersymbol(iMinCash)
+
+label(aobPilotSkillEnumerator_r)
+label(aobPilotSkillEnumerator_i)
+registersymbol(aobPilotSkillEnumerator_r)
+registersymbol(aobPilotSkillEnumerator_i)
+
+label(lblPilotSkillEnumerator)
+label(lblPilotSkillEnumeratorSkip)
+label(lblPilotSkillEnumeratorRet)
+
+label(bEnablePilotSkillCapPatcher)
+label(iMinPilotSkillCap)
+label(bEnablePilotSkillXPPatcher)
+label(iMinPilotSkillXP)
+registersymbol(bEnablePilotSkillCapPatcher)
+registersymbol(iMinPilotSkillCap)
+registersymbol(bEnablePilotSkillXPPatcher)
+registersymbol(iMinPilotSkillXP)
+
+label(aobMechTonnageCalc_r)
+label(aobMechTonnageCalc_i)
+registersymbol(aobMechTonnageCalc_r)
+registersymbol(aobMechTonnageCalc_i)
+
+label(lblMechTonnageCalc)
+label(lblMechTonnageCalcSkip)
+label(lblMechTonnageCalcRet)
+
+label(bEnableMechTonnageMod)
+label(fMechTonnageMod)
+registersymbol(bEnableMechTonnageMod)
+registersymbol(fMechTonnageMod)
+
+label(aobEquipmentCountReader_r)
+label(aobEquipmentCountReader_i)
+registersymbol(aobEquipmentCountReader_r)
+registersymbol(aobEquipmentCountReader_i)
+
+label(lblEquipmentCountReader)
+label(lblEquipmentCountReaderSkip)
+label(lblEquipmentCountReaderRet)
+
+label(bEnableMinEquipmentCount)
+label(iMinEquipmentCount)
+registersymbol(bEnableMinEquipmentCount)
+registersymbol(iMinEquipmentCount)
+
+//label(aobWeaponCountReader_r)
+//label(aobWeaponCountReader_i)
+//registersymbol(aobWeaponCountReader_r)
+//registersymbol(aobWeaponCountReader_i)
+
+//label(lblWeaponCountReader)
+//label(lblWeaponCountReaderSkip)
+//label(lblWeaponCountReaderRet)
+
+label(bEnableMinWeaponCount)
+label(iMinWeaponCount)
+registersymbol(bEnableMinWeaponCount)
+registersymbol(iMinWeaponCount)
+
+label(aobDaysPassedGrabber_r)
+label(aobDaysPassedGrabber_i)
+registersymbol(aobDaysPassedGrabber_r)
+registersymbol(aobDaysPassedGrabber_i)
+
+label(lblDaysPassedGrabber)
+label(lblDaysPassedGrabberSkip)
+label(lblDaysPassedGrabberRet)
+
+label(pDaysPassed)
+label(iDaysPassedOffset)
+registersymbol(pDaysPassed)
+registersymbol(iDaysPassedOffset)
+
+label(aobDaysUpdater_r)
+label(aobDaysUpdater_i)
+registersymbol(aobDaysUpdater_r)
+registersymbol(aobDaysUpdater_i)
+
+label(lblDaysUpdater)
+label(lblDaysUpdaterSkip)
+label(lblDaysUpdaterRet)
+
+label(bEnablePassLessDays)
+registersymbol(bEnablePassLessDays)
+
+label(aobJobReader_r)
+label(aobJobReader_i)
+registersymbol(aobJobReader_r)
+registersymbol(aobJobReader_i)
+
+label(lblJobReader)
+label(lblJobReaderSkip)
+label(lblJobReaderRet)
+
+label(bEnableInstantJobCompletion)
+registersymbol(bEnableInstantJobCompletion)
+
+label(aobRefitTimeCalc_r)
+label(aobRefitTimeCalc_i)
+registersymbol(aobRefitTimeCalc_r)
+registersymbol(aobRefitTimeCalc_i)
+
+label(lblRefitTimeCalc)
+label(lblRefitTimeCalcSkip)
+label(lblRefitTimeCalcRet)
+
+label(bEnableRefitTimeMod)
+label(fRefitTimeMod)
+registersymbol(bEnableRefitTimeMod)
+registersymbol(fRefitTimeMod)
+
+label(aobRefitCostCalc_r)
+label(aobRefitCostCalc_i)
+registersymbol(aobRefitCostCalc_r)
+registersymbol(aobRefitCostCalc_i)
+
+label(lblRefitCostCalc)
+label(lblRefitCostCalcSkip)
+label(lblRefitCostCalcRet)
+
+label(bEnableRefitCostMod)
+label(fRefitCostMod)
+registersymbol(bEnableRefitCostMod)
+registersymbol(fRefitCostMod)
+
+label(aobUpgradeTimeCalc_r)
+label(aobUpgradeTimeCalc_i)
+registersymbol(aobUpgradeTimeCalc_r)
+registersymbol(aobUpgradeTimeCalc_i)
+
+label(lblUpgradeTimeCalc)
+label(lblUpgradeTimeCalcSkip)
+label(lblUpgradeTimeCalcRet)
+
+label(bEnableUpgradeTimeMod)
+label(fUpgradeTimeMod)
+registersymbol(bEnableUpgradeTimeMod)
+registersymbol(fUpgradeTimeMod)
+
+label(aobDeployTonsChecker_r)
+label(aobDeployTonsChecker_i)
+registersymbol(aobDeployTonsChecker_r)
+registersymbol(aobDeployTonsChecker_i)
+
+label(lblDeployTonsChecker)
+label(lblDeployTonsCheckerSkip)
+label(lblDeployTonsCheckerRet)
+
+label(bEnableDeployAnyTons)
+registersymbol(bEnableDeployAnyTons)
+
+//label(aobContractDetailsGrabber2_i)
+//registersymbol(aobContractDetailsGrabber2_i)
+
+//label(lblContractDetailsGrabber2)
+//label(lblContractDetailsGrabber2Skip)
+//label(lblContractDetailsGrabber2Ret)
+
+label(pContractNegPtsRemaining)
+registersymbol(pContractNegPtsRemaining)
+
+label(aobSalvageMaxer_r)
+label(aobSalvageMaxer_i)
+registersymbol(aobSalvageMaxer_r)
+registersymbol(aobSalvageMaxer_i)
+
+label(lblSalvageMaxer)
+label(lblSalvageMaxerSkip)
+label(lblSalvageMaxerRet)
+
+label(bEnableSalvageMaxer)
+registersymbol(bEnableSalvageMaxer)
+
+label(iPMMSalvageOffset)
+registersymbol(iPMMSalvageOffset)
+
+label(aobMechCooldownCalc_r)
+label(aobMechCooldownCalc_i)
+registersymbol(aobMechCooldownCalc_r)
+registersymbol(aobMechCooldownCalc_i)
+
+label(lblMechCooldownCalc)
+label(lblMechCooldownCalcSkip)
+label(lblMechCooldownCalcRet)
+label(lblMechCooldownCalcPlayer)
+label(lblMechCooldownCalcLancemate)
+
+label(bEnableMechCooldownMod)
+label(fMechCooldownMod)
+label(bEnableLancemateMechCooldownMod)
+label(fLancemateMechCooldownMod)
+registersymbol(bEnableMechCooldownMod)
+registersymbol(fMechCooldownMod)
+registersymbol(bEnableLancemateMechCooldownMod)
+registersymbol(fLancemateMechCooldownMod)
+
+label(aobTopSpeedCalc_r)
+label(aobTopSpeedCalc_i)
+registersymbol(aobTopSpeedCalc_r)
+registersymbol(aobTopSpeedCalc_i)
+
+label(lblTopSpeedCalc)
+label(lblTopSpeedCalcSkip)
+label(lblTopSpeedCalcRet)
+label(lblTopSpeedCalcPlayer)
+label(lblTopSpeedCalcLancemate)
+
+//label(aobReverseTopSpeedCalc_i)
+//registersymbol(aobReverseTopSpeedCalc_i)
+
+//label(lblReverseTopSpeedCalc)
+//label(lblReverseTopSpeedCalcSkip)
+//label(lblReverseTopSpeedCalcRet)
+//label(lblReverseTopSpeedCalcPlayer)
+//label(lblReverseTopSpeedCalcLancemate)
+
+label(bEnableTopSpeedMod)
+label(fTopSpeedMod)
+label(bEnableLancemateTopSpeedMod)
+label(fLancemateTopSpeedMod)
+registersymbol(bEnableTopSpeedMod)
+registersymbol(fTopSpeedMod)
+registersymbol(bEnableLancemateTopSpeedMod)
+registersymbol(fLancemateTopSpeedMod)
+
+label(aobJJFuelCalc_r)
+label(aobJJFuelCalc_i)
+registersymbol(aobJJFuelCalc_r)
+registersymbol(aobJJFuelCalc_i)
+
+label(lblJJFuelCalc)
+label(lblJJFuelCalcSkip)
+label(lblJJFuelCalcRet)
+
+label(bEnableInfiniteJumpJet)
+registersymbol(bEnableInfiniteJumpJet)
+
+label(aobJJSpeedCalc_r)
+label(aobJJSpeedCalc_i)
+registersymbol(aobJJSpeedCalc_r)
+registersymbol(aobJJSpeedCalc_i)
+
+label(lblJJSpeedCalc)
+label(lblJJSpeedCalcSkip)
+label(lblJJSpeedCalcRet)
+
+label(bEnableJumpJetVerticalSpeedMod)
+label(fJumpJetVerticalSpeedMod)
+label(bEnableJumpJetForwardSpeedMod)
+label(fJumpJetForwardSpeedMod)
+registersymbol(bEnableJumpJetVerticalSpeedMod)
+registersymbol(fJumpJetVerticalSpeedMod)
+registersymbol(bEnableJumpJetForwardSpeedMod)
+registersymbol(fJumpJetForwardSpeedMod)
+
+label(iJJStackOffset)
+registersymbol(iJJStackOffset)
+
+label(aobAmmoCalc_r)
+label(aobAmmoCalc_i)
+registersymbol(aobAmmoCalc_r)
+registersymbol(aobAmmoCalc_i)
+
+label(lblAmmoCalc)
+label(lblAmmoCalcSkip)
+label(lblAmmoCalcRet)
+label(lblAmmoCalcPlayer)
+label(lblAmmoCalcLancemate)
+
+label(bEnableInfiniteAmmo)
+label(bEnableLancemateInfiniteAmmo)
+registersymbol(bEnableInfiniteAmmo)
+registersymbol(bEnableLancemateInfiniteAmmo)
+
+label(aobWeaponCooldownCalc_r)
+label(aobWeaponCooldownCalc_i)
+registersymbol(aobWeaponCooldownCalc_r)
+registersymbol(aobWeaponCooldownCalc_i)
+
+label(lblWeaponCooldownCalc)
+label(lblWeaponCooldownCalcSkip)
+label(lblWeaponCooldownCalcRet)
+label(lblWeaponCooldownCalcPlayer)
+label(lblWeaponCooldownCalcLancemate)
+
+label(bEnableWeaponCooldownMod)
+label(fWeaponCooldownMod)
+label(bEnableLancemateWeaponCooldownMod)
+label(fLancemateWeaponCooldownMod)
+registersymbol(bEnableWeaponCooldownMod)
+registersymbol(fWeaponCooldownMod)
+registersymbol(bEnableLancemateWeaponCooldownMod)
+registersymbol(fLancemateWeaponCooldownMod)
+
+label(aobRecoilCalc_r)
+label(aobRecoilCalc_i)
+registersymbol(aobRecoilCalc_r)
+registersymbol(aobRecoilCalc_i)
+
+label(lblRecoilCalc)
+label(lblRecoilCalcSkip)
+label(lblRecoilCalcRet)
+
+label(bEnableNoRecoil)
+registersymbol(bEnableNoRecoil)
+
+label(aobDamageCalc_r)
+label(aobDamageCalc_i)
+registersymbol(aobDamageCalc_r)
+registersymbol(aobDamageCalc_i)
+
+label(lblDamageCalc)
+label(lblDamageCalcSkip)
+label(lblDamageCalcRet)
+label(lblDamageCalcPlayer)
+label(lblDamageCalcLancemate)
+
+label(bEnableGodMode)
+label(bEnableDamageMod)
+label(fDamageMod)
+label(bEnableLancemateGodMode)
+label(bEnableLancemateDamageMod)
+label(fLancemateDamageMod)
+registersymbol(bEnableGodMode)
+registersymbol(bEnableDamageMod)
+registersymbol(fDamageMod)
+registersymbol(bEnableLancemateGodMode)
+registersymbol(bEnableLancemateDamageMod)
+registersymbol(fLancemateDamageMod)
+
+label(aobScanTimeCalc_r)
+label(aobScanTimeCalc_i)
+registersymbol(aobScanTimeCalc_r)
+registersymbol(aobScanTimeCalc_i)
+
+label(lblScanTimeCalc)
+label(lblScanTimeCalcSkip)
+label(lblScanTimeCalcRet)
+
+label(bEnableScanSpeedMod)
+label(fScanSpeedMod)
+registersymbol(bEnableScanSpeedMod)
+registersymbol(fScanSpeedMod)
+
+label(aobSensorRangeCalc1_r)
+label(aobSensorRangeCalc1_i)
+registersymbol(aobSensorRangeCalc1_r)
+registersymbol(aobSensorRangeCalc1_i)
+
+label(lblSensorRangeCalc1)
+label(lblSensorRangeCalc1Skip)
+label(lblSensorRangeCalc1Ret)
+label(lblSensorRangeCalc1Player)
+label(lblSensorRangeCalc1Lancemate)
+
+label(aobSensorRangeCalc2_r)
+label(aobSensorRangeCalc2_i)
+registersymbol(aobSensorRangeCalc2_r)
+registersymbol(aobSensorRangeCalc2_i)
+
+label(lblSensorRangeCalc2)
+label(lblSensorRangeCalc2Skip)
+label(lblSensorRangeCalc2Ret)
+
+label(lblSensorRangeCalc2)
+label(lblSensorRangeCalc2Skip)
+label(lblSensorRangeCalc2Ret)
+label(lblSensorRangeCalc2Player)
+label(lblSensorRangeCalc2Lancemate)
+
+label(bEnableSensorRangeMod)
+label(fSensorRangeMod)
+label(bEnableLancemateSensorRangeMod)
+label(fLancemateSensorRangeMod)
+registersymbol(bEnableSensorRangeMod)
+registersymbol(fSensorRangeMod)
+registersymbol(bEnableLancemateSensorRangeMod)
+registersymbol(fLancemateSensorRangeMod)
+
+label(aobProjectileSpeedCalc_r)
+label(aobProjectileSpeedCalc_i)
+registersymbol(aobProjectileSpeedCalc_r)
+registersymbol(aobProjectileSpeedCalc_i)
+
+label(lblProjectileSpeedCalc)
+label(lblProjectileSpeedCalcSkip)
+label(lblProjectileSpeedCalcRet)
+label(lblProjectileSpeedCalcRet)
+label(lblProjectileSpeedCalcPlayer)
+label(lblProjectileSpeedCalcLancemate)
+
+label(bEnableProjectileSpeedMod)
+label(fProjectileSpeedMod)
+label(bEnableLancemateProjectileSpeedMod)
+label(fLancemateProjectileSpeedMod)
+registersymbol(bEnableProjectileSpeedMod)
+registersymbol(fProjectileSpeedMod)
+registersymbol(bEnableLancemateProjectileSpeedMod)
+registersymbol(fLancemateProjectileSpeedMod)
+
+label(aobWeaponDamageCalc_r)
+label(aobWeaponDamageCalc_i)
+registersymbol(aobWeaponDamageCalc_r)
+registersymbol(aobWeaponDamageCalc_i)
+
+label(lblWeaponDamageCalc)
+label(lblWeaponDamageCalcSkip)
+label(lblWeaponDamageCalcRet)
+label(lblWeaponDamageModRetPlayer)
+label(lblWeaponDamageModRetLancemate)
+
+label(bEnableWeaponDamageMod)
+label(fWeaponDamageMod)
+label(bEnableLancemateWeaponDamageMod)
+label(fLancemateWeaponDamageMod)
+registersymbol(bEnableWeaponDamageMod)
+registersymbol(fWeaponDamageMod)
+registersymbol(bEnableLancemateWeaponDamageMod)
+registersymbol(fLancemateWeaponDamageMod)
+
+label(aobFactionDataGrabber_r)
+label(aobFactionDataGrabber_i)
+registersymbol(aobFactionDataGrabber_r)
+registersymbol(aobFactionDataGrabber_i)
+
+label(lblFactionDataGrabber)
+label(lblFactionDataGrabberSkip)
+label(lblFactionDataGrabberRet)
+
+label(pFactionData)
+label(iFactionDataOffset)
+registersymbol(pFactionData)
+registersymbol(iFactionDataOffset)
+
+newmemPlayerControllerGrabber:
+//////////////////////////////////////////////
+// Set your preferred default values below. //
+//////////////////////////////////////////////
+// On foot
+bEnableMoveSpeedMod:
+dd 1
+fMoveSpeedMod:
+dd (float)2.5
+bEnableJumpSpeedMod:
+dd 1
+fJumpSpeedMod:
+dd (float)1.5
+//////////////
+// In computer
+bEnableMinCash:
+dd 1
+iMinCash:
+dq (int)10000000
+bEnablePilotSkillCapPatcher:
+dd 1
+iMinPilotSkillCap:
+dd (int)10
+bEnablePilotSkillXPPatcher:
+dd 0
+iMinPilotSkillXP:
+dd (int)5000
+bEnableMechTonnageMod:
+dd 1
+fMechTonnageMod:
+dd (float)0.2
+bEnableMinWeaponCount:
+dd 0
+iMinWeaponCount:
+dd (int)50
+bEnableMinEquipmentCount:
+dd 0
+iMinEquipmentCount:
+dd (int)100
+bEnableRefitCostMod:
+dd 1
+fRefitCostMod:
+dd (float)0.0
+bEnableRefitTimeMod:
+dd 1
+fRefitTimeMod:
+dd (float)0.0
+bEnableUpgradeTimeMod:
+dd 0
+fUpgradeTimeMod:
+dd (float)0.0
+bEnableDeployAnyTons:
+dd 1
+bEnableSalvageMaxer:
+dd 1
+bEnableInstantJobCompletion:
+dd 0
+bEnablePassLessDays:
+dd 1
+//////////
+// In mech
+bEnableNoRecoil:
+dd 1
+bEnableInfiniteAmmo:
+dd 1
+bEnableGodMode:
+dd 1
+bEnableDamageMod:
+dd 1
+fDamageMod:
+dd (float)0.2
+bEnableMechCooldownMod:
+dd 1
+fMechCooldownMod:
+dd (float)20.0
+bEnableWeaponDamageMod:
+dd 1
+fWeaponDamageMod:
+dd (float)2.0
+bEnableWeaponCooldownMod:
+dd 1
+fWeaponCooldownMod:
+dd (float)10.0
+bEnableProjectileSpeedMod:
+dd 1
+fProjectileSpeedMod:
+dd (float)5.0
+bEnableTopSpeedMod:
+dd 1
+fTopSpeedMod:
+dd (float)1.75
+bEnableInfiniteJumpJet:
+dd 1
+bEnableJumpJetVerticalSpeedMod:
+dd 1
+fJumpJetVerticalSpeedMod:
+dd (float)4.0
+bEnableJumpJetForwardSpeedMod:
+dd 1
+fJumpJetForwardSpeedMod:
+dd (float)4.0
+bEnableSensorRangeMod:
+dd 1
+fSensorRangeMod:
+dd (float)1.5
+bEnableScanSpeedMod:
+dd 1
+fScanSpeedMod:
+dd (float)100.0
+/////////////////////
+// Lancemates in mech
+bEnableLancemateInfiniteAmmo:
+dd 1
+bEnableLancemateGodMode:
+dd 1
+bEnableLancemateDamageMod:
+dd 1
+fLancemateDamageMod:
+dd (float)0.2
+bEnableLancemateMechCooldownMod:
+dd 1
+fLancemateMechCooldownMod:
+dd (float)10.0
+bEnableLancemateWeaponDamageMod:
+dd 1
+fLancemateWeaponDamageMod:
+dd (float)1.5
+bEnableLancemateWeaponCooldownMod:
+dd 1
+fLancemateWeaponCooldownMod:
+dd (float)4.0
+bEnableLancemateProjectileSpeedMod:
+dd 1
+fLancemateProjectileSpeedMod:
+dd (float)2.0
+bEnableLancemateTopSpeedMod:
+dd 1
+fLancemateTopSpeedMod:
+dd (float)1.25
+bEnableLancemateSensorRangeMod:
+dd 1
+fLancemateSensorRangeMod:
+dd (float)2.0
+//////////////////////////////////////////////
+// Set your preferred default values above. //
+//////////////////////////////////////////////
+
+lblPlayerControllerGrabber:
+readmem(aobPlayerControllerGrabber,7)
+je lblPlayerControllerGrabberRet
+mov qword ptr [pPlayerController],rcx
+pushfq
+mov rbx,[iControllerPawnOffset]
+mov rbx,[rbx+rcx]
+mov qword ptr [pPlayerPawn],rbx
+test rbx,rbx
+jz short lblPlayerControllerGrabberSkip
+mov rax,[iPawnMovementOffset]
+mov rax,[rax+rbx]
+mov qword ptr [pPlayerMovement],rax
+lblPlayerControllerGrabberSkip:
+popfq
+jmp lblPlayerControllerGrabberRet
+aobPlayerControllerGrabber_i:
+readmem(aobPlayerControllerGrabber,7)
+align 10 CC
+pPlayerController:
+dq 0
+pPlayerPawn:
+dq 0
+pPlayerMovement:
+dq 0
+iControllerPawnOffset:
+readmem(aobControllerPawnOffset+03,4)
+dd 0
+iPawnMovementOffset:
+readmem(aobPawnMovementOffset+03,4)
+dd 0
+iPawnAllyOffset:
+readmem(aobPawnAllyOffset+03,4)
+dd 0
+iWpnCooldownPawnOffset:
+readmem(aobWpnCooldownPawnOffset+03,4)
+dd 0
+iActorChildrenOffset:
+readmem(aobActorChildrenOffset+03,4)
+dd 0
+
+lblMoveSpeedCalc:
+readmem(aobMoveSpeedCalc+10,8)
+cmp qword ptr [pPlayerMovement],rbx
+jne short lblMoveSpeedCalcSkip
+cmp dword ptr [bEnableMoveSpeedMod],1
+jne short lblMoveSpeedCalcSkip
+mulss xmm0,[fMoveSpeedMod]
+lblMoveSpeedCalcSkip:
+jmp lblMoveSpeedCalcRet
+aobMoveSpeedCalc_i:
+readmem(aobMoveSpeedCalc+10,8)
+
+lblJumpSpeedCalc:
+readmem(aobJumpSpeedCalc,8)
+cmp rbx,[pPlayerMovement]
+jne short lblJumpSpeedCalcSkip
+cmp dword ptr [bEnableJumpSpeedMod],1
+jne short lblJumpSpeedCalcSkip
+mulss xmm0,[fJumpSpeedMod]
+lblJumpSpeedCalcSkip:
+jmp lblJumpSpeedCalcRet
+aobJumpSpeedCalc_i:
+readmem(aobJumpSpeedCalc,8)
+
+lblCashReader:
+cmp dword ptr [bEnableMinCash],1
+jne short lblCashReaderSkip
+mov rax,[iMinCash]
+movsxd r11,[aobCashReader_i+03]
+cmp qword ptr [rcx+r11],rax
+jge short lblCashReaderSkip
+mov qword ptr [rcx+r11],rax
+lblCashReaderSkip:
+readmem(aobCashReader,7)
+jmp lblCashReaderRet
+aobCashReader_i:
+readmem(aobCashReader,7)
+
+lblPilotSkillEnumerator:
+readmem(aobPilotSkillEnumerator,6)
+cmp dword ptr [bEnablePilotSkillCapPatcher],1
+jne lblPilotSkillEnumeratorSkip
+push rax
+push rbx
+push rcx
+push rdx
+push r8
+push r9
+push r10
+push r11
+mov rcx,PilotSkillKey
+push rcx
+call GetAsyncKeyState
+add rsp,08
+shr ax,#15
+cmp ax,1
+pop r11
+pop r10
+pop r9
+pop r8
+pop rdx
+pop rcx
+pop rbx
+pop rax
+jne lblPilotSkillEnumeratorSkip
+push rdx
+mov eax,[iMinPilotSkillCap]
+movsxd rdx,[aobPilotSkillEnumerator_i+02]
+add rdx,3c
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+add rdx,8
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+add rdx,8
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+add rdx,10
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+add rdx,8
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+add rdx,8
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+pop rdx
+cmp dword ptr [bEnablePilotSkillXPPatcher],1
+jne lblPilotSkillEnumeratorSkip
+push rdx
+mov eax,[iMinPilotSkillXP]
+movsxd rdx,[aobPilotSkillEnumerator_i+02]
+add rdx,40
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+add rdx,8
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+add rdx,8
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+add rdx,10
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+add rdx,8
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+add rdx,8
+cmp dword ptr [rbx+rdx],eax
+jge short @f
+mov dword ptr [rbx+rdx],eax
+@@:
+pop rdx
+lblPilotSkillEnumeratorSkip:
+jmp lblPilotSkillEnumeratorRet
+aobPilotSkillEnumerator_i:
+readmem(aobPilotSkillEnumerator,6)
+
+lblMechTonnageCalc:
+cmp dword ptr [bEnableMechTonnageMod],1
+jne short lblMechTonnageCalcSkip
+mulss xmm0,[fMechTonnageMod]
+lblMechTonnageCalcSkip:
+reassemble(aobMechTonnageCalc)
+jmp lblMechTonnageCalcRet
+aobMechTonnageCalc_i:
+readmem(aobMechTonnageCalc,6)
+
+lblEquipmentCountReader:
+cmp dword ptr [bEnableMinEquipmentCount],1
+jne short lblEquipmentCountReaderSkip
+movsx rax,[aobEquipmentCountReader_i+03]
+mov r11d,[iMinEquipmentCount]
+cmp dword ptr [rax+r14],r11d
+jge short lblEquipmentCountReaderSkip
+mov dword ptr [rax+r14],r11d
+lblEquipmentCountReaderSkip:
+readmem(aobEquipmentCountReader,8)
+jmp lblEquipmentCountReaderRet
+aobEquipmentCountReader_i:
+readmem(aobEquipmentCountReader,8)
+
+//lblWeaponCountReader:
+//cmp dword ptr [bEnableMinWeaponCount],1
+//jne short lblWeaponCountReaderSkip
+//movsx rax,[aobWeaponCountReader_i+03]
+//mov r11d,[iMinWeaponCount]
+//cmp dword ptr [rax+r14],r11d
+//jge short lblWeaponCountReaderSkip
+//mov dword ptr [rax+r14],r11d
+//lblWeaponCountReaderSkip:
+//readmem(aobWeaponCountReader,8)
+//jmp lblWeaponCountReaderRet
+//aobWeaponCountReader_i:
+//readmem(aobWeaponCountReader,8)
+
+lblDaysPassedGrabber:
+readmem(aobDaysPassedGrabber,11)
+mov qword ptr [pDaysPassed],rdx
+lblDaysPassedGrabberSkip:
+jmp lblDaysPassedGrabberRet
+aobDaysPassedGrabber_i:
+readmem(aobDaysPassedGrabber,11)
+pDaysPassed:
+dq 0
+iDaysPassedOffset:
+readmem(aobDaysPassedGrabber+07,4)
+dd 0
+
+lblDaysUpdater:
+cmp dword ptr [bEnablePassLessDays],1
+jne short lblDaysUpdaterSkip
+test edx,edx
+jle short lblDaysUpdaterSkip
+mov edx,1
+lblDaysUpdaterSkip:
+readmem(aobDaysUpdater,6)
+jmp lblDaysUpdaterRet
+aobDaysUpdater_i:
+readmem(aobDaysUpdater,6)
+
+lblJobReader:
+readmem(aobJobReader,6)
+cmp dword ptr [bEnableInstantJobCompletion],1
+jne short lblJobReaderSkip
+movsxd r11,[aobJobReader_i+02]
+mov dword ptr [r11+rcx+20],eax
+mov byte ptr [r11+rcx+24],1
+mov dword ptr [r11+rcx+40],eax
+lblJobReaderSkip:
+jmp lblJobReaderRet
+aobJobReader_i:
+readmem(aobJobReader,6)
+
+lblRefitTimeCalc:
+readmem(aobRefitTimeCalc+08,8)
+cmp dword ptr [bEnableRefitTimeMod],1
+jne short lblRefitTimeCalcSkip
+mulss xmm0,[fRefitTimeMod]
+lblRefitTimeCalcSkip:
+jmp lblRefitTimeCalcRet
+aobRefitTimeCalc_i:
+readmem(aobRefitTimeCalc+08,8)
+
+lblRefitCostCalc:
+readmem(aobRefitCostCalc,8)
+cmp dword ptr [bEnableRefitCostMod],1
+jne short lblRefitCostCalcSkip
+mulss xmm0,[fRefitCostMod]
+lblRefitCostCalcSkip:
+jmp lblRefitCostCalcRet
+aobRefitCostCalc_i:
+readmem(aobRefitCostCalc,8)
+
+lblUpgradeTimeCalc:
+readmem(aobUpgradeTimeCalc,5)
+cmp dword ptr [bEnableUpgradeTimeMod],1
+jne short lblUpgradeTimeCalcSkip
+mulss xmm1,[fUpgradeTimeMod]
+lblUpgradeTimeCalcSkip:
+jmp lblUpgradeTimeCalcRet
+aobUpgradeTimeCalc_i:
+readmem(aobUpgradeTimeCalc,5)
+
+lblDeployTonsChecker:
+cmp dword ptr [bEnableDeployAnyTons],1
+jne short lblDeployTonsCheckerSkip
+movsxd rdx,[aobDeployTonsChecker_i+03]
+mov dword ptr [r13+rdx],eax
+lblDeployTonsCheckerSkip:
+readmem(aobDeployTonsChecker,7)
+jmp lblDeployTonsCheckerRet
+aobDeployTonsChecker_i:
+readmem(aobDeployTonsChecker,7)
+
+//lblContractDetailsGrabber2:
+//mov qword ptr [pContractNegPtsRemaining],rsi
+//lblContractDetailsGrabber2Skip:
+//readmem(aobContractDetailsGrabber2,7)
+//jmp lblContractDetailsGrabber2Ret
+//aobContractDetailsGrabber2_i:
+//readmem(aobContractDetailsGrabber2,7)
+//align 8 CC
+pContractNegPtsRemaining:
+dq 0
+
+lblSalvageMaxer:
+readmem(aobSalvageMaxer,2)
+reassemble(aobSalvageMaxer+02)
+cmp dword ptr [bEnableSalvageMaxer],1
+jne short lblSalvageMaxerSkip
+cmp eax,ebx
+jge short lblSalvageMaxerSkip
+movsxd r11,[iPMMSalvageOffset]
+lea rdi,[rdi+r11]
+mov r11d,eax
+sub r11d,ebx
+neg r11d
+add eax,r11d
+add dword ptr [rdi],r11d
+lblSalvageMaxerSkip:
+readmem(aobSalvageMaxer+07,7)
+jmp lblSalvageMaxerRet
+aobSalvageMaxer_i:
+readmem(aobSalvageMaxer,14)
+align 8 CC
+iPMMSalvageOffset:
+readmem(aobPMMSalvageOffset+02,4)
+dd 0
+
+lblMechCooldownCalc:
+readmem(aobMechCooldownCalc+18,8)
+{$try}
+movsxd rax,[iWpnCooldownPawnOffset]
+mov rax,[rcx+rax]
+cmp qword ptr [pPlayerPawn],rax
+je short lblMechCooldownCalcPlayer
+movsxd r11,[iPawnAllyOffset]
+cmp byte ptr [rax+r11],1
+je short lblMechCooldownCalcLancemate
+{$except}
+lblMechCooldownCalcSkip:
+jmp lblMechCooldownCalcRet
+lblMechCooldownCalcPlayer:
+cmp dword ptr [bEnableMechCooldownMod],1
+jne short lblMechCooldownCalcSkip
+mulss xmm0,[fMechCooldownMod]
+jmp short lblMechCooldownCalcSkip
+lblMechCooldownCalcLancemate:
+cmp dword ptr [bEnableLancemateMechCooldownMod],1
+jne short lblMechCooldownCalcSkip
+mulss xmm0,[fLancemateMechCooldownMod]
+jmp short lblMechCooldownCalcSkip
+aobMechCooldownCalc_i:
+readmem(aobMechCooldownCalc+18,8)
+
+lblTopSpeedCalc:
+readmem(aobTopSpeedCalc,8)
+reassemble(aobTopSpeedCalc+08)
+{$try}
+movsxd rax,[iWpnCooldownPawnOffset]
+mov rax,[rax+rcx]
+cmp qword ptr [pPlayerPawn],rax
+je short lblTopSpeedCalcPlayer
+movsxd r11,[iPawnAllyOffset]
+cmp byte ptr [rax+r11],1
+je short lblTopSpeedCalcLancemate
+{$except}
+lblTopSpeedCalcSkip:
+jmp lblTopSpeedCalcRet
+lblTopSpeedCalcPlayer:
+cmp dword ptr [bEnableTopSpeedMod],1
+jne short lblTopSpeedCalcSkip
+mulss xmm6,[fTopSpeedMod]
+jmp short lblTopSpeedCalcSkip
+lblTopSpeedCalcLancemate:
+cmp dword ptr [bEnableLancemateTopSpeedMod],1
+jne short lblTopSpeedCalcSkip
+mulss xmm6,[fLancemateTopSpeedMod]
+jmp short lblTopSpeedCalcSkip
+aobTopSpeedCalc_i:
+readmem(aobTopSpeedCalc,16)
+
+//lblReverseTopSpeedCalc:
+//readmem(aobReverseTopSpeedCalc,8)
+//reassemble(aobReverseTopSpeedCalc+08)
+//{$try}
+//movsxd rax,[iWpnCooldownPawnOffset]
+//mov rax,[rax+rcx]
+//cmp qword ptr [pPlayerPawn],rax
+//je short lblReverseTopSpeedCalcPlayer
+//movsxd r11,[iPawnAllyOffset]
+//cmp byte ptr [rax+r11],1
+//je short lblReverseTopSpeedCalcLancemate
+//{$except}
+//lblReverseTopSpeedCalcSkip:
+//jmp lblReverseTopSpeedCalcRet
+//lblReverseTopSpeedCalcPlayer:
+//cmp dword ptr [bEnableTopSpeedMod],1
+//jne short lblReverseTopSpeedCalcSkip
+//mulss xmm6,[fTopSpeedMod]
+//jmp short lblReverseTopSpeedCalcSkip
+//lblReverseTopSpeedCalcLancemate:
+//cmp dword ptr [bEnableLancemateTopSpeedMod],1
+//jne short lblReverseTopSpeedCalcSkip
+//mulss xmm6,[fLancemateTopSpeedMod]
+//jmp short lblReverseTopSpeedCalcSkip
+//aobReverseTopSpeedCalc_i:
+//readmem(aobReverseTopSpeedCalc,16)
+
+lblJJFuelCalc:
+mov rax,[rdi+20]
+cmp qword ptr [pPlayerPawn],rax
+jne short lblJJFuelCalcSkip
+cmp dword ptr [bEnableInfiniteJumpJet],1
+jne short lblJJFuelCalcSkip
+xorps xmm9,xmm9
+lblJJFuelCalcSkip:
+readmem(aobJJFuelCalc,8)
+jmp lblJJFuelCalcRet
+aobJJFuelCalc_i:
+readmem(aobJJFuelCalc,8)
+
+lblJJSpeedCalc:
+mov rax,[rcx+20]
+cmp qword ptr [pPlayerPawn],rax
+jne short lblJJSpeedCalcSkip
+movsx rax,[iJJStackOffset]
+cmp dword ptr [bEnableJumpJetVerticalSpeedMod],1
+jne short @f
+mulss xmm0,[fJumpJetVerticalSpeedMod]
+fld dword ptr [rbp+rax-08]
+fmul dword ptr [fJumpJetVerticalSpeedMod]
+fstp dword ptr [rbp+rax-08]
+@@:
+cmp dword ptr [bEnableJumpJetForwardSpeedMod],1
+jne short @f
+fld dword ptr [rbp+rax+08]
+fmul dword ptr [fJumpJetForwardSpeedMod]
+fstp dword ptr [rbp+rax+08]
+@@:
+lblJJSpeedCalcSkip:
+readmem(aobJJSpeedCalc,7)
+jmp lblJJSpeedCalcRet
+aobJJSpeedCalc_i:
+readmem(aobJJSpeedCalc,7)
+align 8 CC
+iJJStackOffset:
+readmem(aobJJSpeedCalc+0B,1)
+dq 0
+
+lblAmmoCalc:
+{$try}
+movsxd rax,[iWpnCooldownPawnOffset]
+mov rax,[rax+rcx]
+cmp qword ptr [pPlayerPawn],rax
+je short lblAmmoCalcPlayer
+movsxd r11,[iPawnAllyOffset]
+cmp byte ptr [rax+r11],1
+je short lblAmmoCalcLancemate
+{$except}
+lblAmmoCalcSkip:
+readmem(aobAmmoCalc,6)
+jmp lblAmmoCalcRet
+lblAmmoCalcPlayer:
+cmp dword ptr [bEnableInfiniteAmmo],1
+jne short lblAmmoCalcSkip
+movsxd rax,[aobAmmoCalc_i+02]
+mov dword ptr [rax+rcx],0
+xor rdx,rdx
+jmp short lblAmmoCalcSkip
+lblAmmoCalcLancemate:
+cmp dword ptr [bEnableLancemateInfiniteAmmo],1
+jne short lblAmmoCalcSkip
+movsxd rax,[aobAmmoCalc_i+02]
+mov dword ptr [rax+rcx],0
+xor rdx,rdx
+jmp short lblAmmoCalcSkip
+aobAmmoCalc_i:
+readmem(aobAmmoCalc,6)
+
+lblWeaponCooldownCalc:
+{$try}
+movsxd rax,[iWpnCooldownPawnOffset]
+mov rax,[rax+rbx]
+cmp qword ptr [pPlayerPawn],rax
+je short lblWeaponCooldownCalcPlayer
+movsxd r11,[iPawnAllyOffset]
+cmp byte ptr [rax+r11],1
+je short lblWeaponCooldownCalcLancemate
+{$except}
+lblWeaponCooldownCalcSkip:
+readmem(aobWeaponCooldownCalc,7)
+jmp lblWeaponCooldownCalcRet
+lblWeaponCooldownCalcPlayer:
+cmp dword ptr [bEnableWeaponCooldownMod],1
+jne short lblWeaponCooldownCalcSkip
+mulss xmm6,[fWeaponCooldownMod]
+jmp short lblWeaponCooldownCalcSkip
+lblWeaponCooldownCalcLancemate:
+cmp dword ptr [bEnableLancemateWeaponCooldownMod],1
+jne short lblWeaponCooldownCalcSkip
+mulss xmm6,[fLancemateWeaponCooldownMod]
+jmp short lblWeaponCooldownCalcSkip
+aobWeaponCooldownCalc_i:
+readmem(aobWeaponCooldownCalc,7)
+
+lblRecoilCalc:
+readmem(aobRecoilCalc,8)
+cmp dword ptr [bEnableNoRecoil],1
+jne short lblRecoilCalcSkip
+xorps xmm0,xmm0
+lblRecoilCalcSkip:
+jmp lblRecoilCalcRet
+aobRecoilCalc_i:
+readmem(aobRecoilCalc,8)
+
+lblDamageCalc:
+readmem(aobDamageCalc,7)
+cmp qword ptr [pPlayerPawn],rax
+je short lblDamageCalcPlayer
+{$try}
+movsxd r11,[iActorChildrenOffset]
+cmp qword ptr [rax+r11],0
+je short lblDamageCalcSkip
+movsxd r11,[iPawnAllyOffset]
+cmp byte ptr [rax+r11],1
+je short lblDamageCalcLancemate
+{$except}
+lblDamageCalcSkip:
+jmp lblDamageCalcRet
+lblDamageCalcPlayer:
+cmp dword ptr [bEnableGodMode],1
+jne short @f
+movss xmm3,[rdx+04]
+movss [rdx],xmm3
+xorps xmm3,xmm3
+jmp short lblDamageCalcSkip
+@@:
+cmp dword ptr [bEnableDamageMod],1
+jne short lblDamageCalcSkip
+mulss xmm3,[fDamageMod]
+jmp short lblDamageCalcSkip
+lblDamageCalcLancemate:
+cmp dword ptr [bEnableLancemateGodMode],1
+jne short @f
+movss xmm3,[rdx+04]
+movss [rdx],xmm3
+xorps xmm3,xmm3
+jmp short lblDamageCalcSkip
+@@:
+cmp dword ptr [bEnableLancemateDamageMod],1
+jne short lblDamageCalcSkip
+mulss xmm3,[fLancemateDamageMod]
+jmp short lblDamageCalcSkip
+aobDamageCalc_i:
+readmem(aobDamageCalc,7)
+
+lblScanTimeCalc:
+cmp dword ptr [bEnableScanSpeedMod],1
+jne short lblScanTimeCalcSkip
+mulss xmm6,[fScanSpeedMod]
+lblScanTimeCalcSkip:
+readmem(aobScanTimeCalc,8)
+jmp lblScanTimeCalcRet
+aobScanTimeCalc_i:
+readmem(aobScanTimeCalc,8)
+
+lblSensorRangeCalc1:
+reassemble(aobSensorRangeCalc1)
+mov rax,[r9+20]
+cmp qword ptr [pPlayerPawn],rax
+je short lblSensorRangeCalc1Player
+{$try}
+movsxd rax,[iWpnCooldownPawnOffset]
+mov rax,[rax+r9]
+movsxd r11,[iPawnAllyOffset]
+cmp byte ptr [rax+r11],1
+je short lblSensorRangeCalc1Lancemate
+{$except}
+lblSensorRangeCalc1Skip:
+jmp lblSensorRangeCalc1Ret
+lblSensorRangeCalc1Player:
+cmp dword ptr [bEnableSensorRangeMod],1
+jne short lblSensorRangeCalc1Skip
+mulss xmm0,[fSensorRangeMod]
+jmp short lblSensorRangeCalc1Skip
+lblSensorRangeCalc1Lancemate:
+cmp dword ptr [bEnableLancemateSensorRangeMod],1
+jne short lblSensorRangeCalc1Skip
+mulss xmm0,[fLancemateSensorRangeMod]
+jmp short lblSensorRangeCalc1Skip
+aobSensorRangeCalc1_i:
+readmem(aobSensorRangeCalc1,8)
+
+lblSensorRangeCalc2:
+reassemble(aobSensorRangeCalc2)
+mov rax,[rcx+20]
+cmp qword ptr [pPlayerPawn],rax
+je short lblSensorRangeCalc2Player
+{$try}
+movsxd rax,[iWpnCooldownPawnOffset]
+mov rax,[rax+rcx]
+movsxd r11,[iPawnAllyOffset]
+cmp byte ptr [rax+r11],1
+je short lblSensorRangeCalc2Lancemate
+{$except}
+lblSensorRangeCalc2Skip:
+jmp lblSensorRangeCalc2Ret
+lblSensorRangeCalc2Player:
+cmp dword ptr [bEnableSensorRangeMod],1
+jne short lblSensorRangeCalc2Skip
+mulss xmm0,[fSensorRangeMod]
+jmp short lblSensorRangeCalc2Skip
+lblSensorRangeCalc2Lancemate:
+cmp dword ptr [bEnableLancemateSensorRangeMod],1
+jne short lblSensorRangeCalc2Skip
+mulss xmm0,[fLancemateSensorRangeMod]
+jmp short lblSensorRangeCalc2Skip
+aobSensorRangeCalc2_i:
+readmem(aobSensorRangeCalc2,8)
+
+lblProjectileSpeedCalc:
+readmem(aobProjectileSpeedCalc,8)
+{$try}
+movsxd rdx,[iWpnCooldownPawnOffset]
+mov rdx,[rdx+rdi]
+movsxd r11,[iActorChildrenOffset]
+cmp qword ptr [rdx+r11],0
+je short lblProjectileSpeedCalcSkip
+cmp qword ptr [pPlayerPawn],rdx
+je short lblProjectileSpeedCalcPlayer
+movsxd r11,[iPawnAllyOffset]
+cmp byte ptr [rdx+r11],1
+je short lblProjectileSpeedCalcLancemate
+{$except}
+lblProjectileSpeedCalcSkip:
+jmp lblProjectileSpeedCalcRet
+lblProjectileSpeedCalcPlayer:
+cmp dword ptr [bEnableProjectileSpeedMod],1
+jne short lblProjectileSpeedCalcSkip
+mulss xmm0,[fProjectileSpeedMod]
+mulss xmm1,[fProjectileSpeedMod]
+jmp short lblProjectileSpeedCalcSkip
+lblProjectileSpeedCalcLancemate:
+cmp dword ptr [bEnableLancemateProjectileSpeedMod],1
+jne short lblProjectileSpeedCalcSkip
+mulss xmm0,[fLancemateProjectileSpeedMod]
+mulss xmm1,[fLancemateProjectileSpeedMod]
+jmp short lblProjectileSpeedCalcSkip
+aobProjectileSpeedCalc_i:
+readmem(aobProjectileSpeedCalc,8)
+
+lblWeaponDamageCalc:
+readmem(aobWeaponDamageCalc,8)
+{$try}
+movsxd rax,[iWpnCooldownPawnOffset]
+mov rax,[rax+rdi]
+movsxd r11,[iActorChildrenOffset]
+cmp qword ptr [rax+r11],0
+je short lblWeaponDamageCalcSkip
+cmp qword ptr [pPlayerPawn],rax
+je short lblWeaponDamageModRetPlayer
+movsxd r11,[iPawnAllyOffset]
+cmp byte ptr [rax+r11],1
+je short lblWeaponDamageModRetLancemate
+{$except}
+lblWeaponDamageCalcSkip:
+jmp lblWeaponDamageCalcRet
+lblWeaponDamageModRetPlayer:
+cmp dword ptr [bEnableWeaponDamageMod],1
+jne short lblWeaponDamageCalcSkip
+mulss xmm0,[fWeaponDamageMod]
+jmp short lblWeaponDamageCalcSkip
+lblWeaponDamageModRetLancemate:
+cmp dword ptr [bEnableLancemateWeaponDamageMod],1
+jne short lblWeaponDamageCalcSkip
+mulss xmm0,[fLancemateWeaponDamageMod]
+jmp short lblWeaponDamageCalcSkip
+aobWeaponDamageCalc_i:
+readmem(aobWeaponDamageCalc,8)
+
+lblFactionDataGrabber:
+readmem(aobFactionDataGrabber,7)
+lblFactionDataGrabberSkip:
+mov qword ptr [pFactionData],rsi
+jmp lblFactionDataGrabberRet
+aobFactionDataGrabber_i:
+readmem(aobFactionDataGrabber,7)
+align 10 CC
+pFactionData:
+dq 0
+iFactionDataOffset:
+readmem(aobFactionDataGrabber+03,4)
+dd 0
+
+aobFactionDataGrabber:
+aobFactionDataGrabber_r:
+jmp lblFactionDataGrabber
+nop 2
+lblFactionDataGrabberRet:
+
+aobWeaponDamageCalc:
+aobWeaponDamageCalc_r:
+jmp lblWeaponDamageCalc
+nop 3
+lblWeaponDamageCalcRet:
+
+aobProjectileSpeedCalc:
+aobProjectileSpeedCalc_r:
+jmp lblProjectileSpeedCalc
+nop 3
+lblProjectileSpeedCalcRet:
+
+aobSensorRangeCalc2:
+aobSensorRangeCalc2_r:
+jmp lblSensorRangeCalc2
+nop 3
+lblSensorRangeCalc2Ret:
+
+aobSensorRangeCalc1:
+aobSensorRangeCalc1_r:
+jmp lblSensorRangeCalc1
+nop 3
+lblSensorRangeCalc1Ret:
+
+aobScanTimeCalc:
+aobScanTimeCalc_r:
+jmp lblScanTimeCalc
+nop 3
+lblScanTimeCalcRet:
+
+aobDamageCalc:
+aobDamageCalc_r:
+jmp lblDamageCalc
+nop 2
+lblDamageCalcRet:
+
+aobRecoilCalc:
+aobRecoilCalc_r:
+jmp lblRecoilCalc
+nop 3
+lblRecoilCalcRet:
+
+aobWeaponCooldownCalc:
+aobWeaponCooldownCalc_r:
+jmp lblWeaponCooldownCalc
+nop 2
+lblWeaponCooldownCalcRet:
+
+aobAmmoCalc:
+aobAmmoCalc_r:
+jmp lblAmmoCalc
+nop
+lblAmmoCalcRet:
+
+aobJJSpeedCalc:
+aobJJSpeedCalc_r:
+jmp lblJJSpeedCalc
+nop 2
+lblJJSpeedCalcRet:
+
+aobJJFuelCalc:
+aobJJFuelCalc_r:
+jmp lblJJFuelCalc
+nop 3
+lblJJFuelCalcRet:
+
+//aobReverseTopSpeedCalc:
+//jmp lblReverseTopSpeedCalc
+//aobReverseTopSpeedCalc+10:
+//lblReverseTopSpeedCalcRet:
+
+aobTopSpeedCalc:
+aobTopSpeedCalc_r:
+jmp lblTopSpeedCalc
+aobTopSpeedCalc+10:
+lblTopSpeedCalcRet:
+
+aobMechCooldownCalc+18:
+aobMechCooldownCalc_r:
+jmp lblMechCooldownCalc
+nop 3
+lblMechCooldownCalcRet:
+
+aobSalvageMaxer:
+aobSalvageMaxer_r:
+jmp lblSalvageMaxer
+aobSalvageMaxer+0E:
+lblSalvageMaxerRet:
+
+//aobContractDetailsGrabber2:
+//jmp lblContractDetailsGrabber2
+//nop 2
+//lblContractDetailsGrabber2Ret:
+
+aobDeployTonsChecker:
+aobDeployTonsChecker_r:
+jmp lblDeployTonsChecker
+nop 2
+lblDeployTonsCheckerRet:
+
+aobUpgradeTimeCalc:
+aobUpgradeTimeCalc_r:
+jmp lblUpgradeTimeCalc
+lblUpgradeTimeCalcRet:
+
+aobRefitCostCalc:
+aobRefitCostCalc_r:
+jmp lblRefitCostCalc
+nop 3
+lblRefitCostCalcRet:
+
+aobRefitTimeCalc+08:
+aobRefitTimeCalc_r:
+jmp lblRefitTimeCalc
+nop 3
+lblRefitTimeCalcRet:
+
+aobJobReader:
+aobJobReader_r:
+jmp lblJobReader
+nop
+lblJobReaderRet:
+
+aobDaysUpdater:
+aobDaysUpdater_r:
+jmp lblDaysUpdater
+nop
+lblDaysUpdaterRet:
+
+aobDaysPassedGrabber:
+aobDaysPassedGrabber_r:
+jmp lblDaysPassedGrabber
+nop 6
+lblDaysPassedGrabberRet:
+
+//aobWeaponCountReader:
+//aobWeaponCountReader_r:
+//jmp lblWeaponCountReader
+//nop 3
+//lblWeaponCountReaderRet:
+
+aobEquipmentCountReader:
+aobEquipmentCountReader_r:
+jmp lblEquipmentCountReader
+nop 3
+lblEquipmentCountReaderRet:
+
+aobMechTonnageCalc:
+aobMechTonnageCalc_r:
+jmp lblMechTonnageCalc
+nop
+lblMechTonnageCalcRet:
+
+aobPilotSkillEnumerator:
+aobPilotSkillEnumerator_r:
+jmp lblPilotSkillEnumerator
+nop
+lblPilotSkillEnumeratorRet:
+
+aobCashReader:
+aobCashReader_r:
+jmp lblCashReader
+nop 2
+lblCashReaderRet:
+
+aobJumpSpeedCalc:
+aobJumpSpeedCalc_r:
+jmp lblJumpSpeedCalc
+nop 3
+lblJumpSpeedCalcRet:
+
+aobMoveSpeedCalc+10:
+aobMoveSpeedCalc_r:
+jmp lblMoveSpeedCalc
+nop 3
+lblMoveSpeedCalcRet:
+
+aobPlayerControllerGrabber:
+aobPlayerControllerGrabber_r:
+jmp lblPlayerControllerGrabber
+nop 2
+lblPlayerControllerGrabberRet:
+
+[DISABLE]
+aobPlayerControllerGrabber_r:
+readmem(aobPlayerControllerGrabber_i,7)
+
+aobMoveSpeedCalc_r:
+readmem(aobMoveSpeedCalc_i,8)
+
+aobJumpSpeedCalc_r:
+readmem(aobJumpSpeedCalc_i,8)
+
+aobCashReader_r:
+readmem(aobCashReader_i,7)
+
+aobPilotSkillEnumerator_r:
+readmem(aobPilotSkillEnumerator_i,6)
+
+aobMechTonnageCalc_r:
+readmem(aobMechTonnageCalc_i,6)
+
+aobEquipmentCountReader_r:
+readmem(aobEquipmentCountReader_i,8)
+
+//aobWeaponCountReader_r:
+//readmem(aobWeaponCountReader_i,8)
+
+aobDaysPassedGrabber_r:
+readmem(aobDaysPassedGrabber_i,11)
+
+aobDaysUpdater_r:
+readmem(aobDaysUpdater_i,6)
+
+aobJobReader_r:
+readmem(aobJobReader_i,6)
+
+aobRefitTimeCalc_r:
+readmem(aobRefitTimeCalc_i,8)
+
+aobRefitCostCalc_r:
+readmem(aobRefitCostCalc_i,8)
+
+aobUpgradeTimeCalc_r:
+readmem(aobUpgradeTimeCalc_i,5)
+
+aobDeployTonsChecker_r:
+readmem(aobDeployTonsChecker_i,7)
+
+aobContractDetailsGrabber2:
+readmem(aobContractDetailsGrabber2_i,7)
+
+aobSalvageMaxer_r:
+readmem(aobSalvageMaxer_i,14)
+
+aobMechCooldownCalc_r:
+readmem(aobMechCooldownCalc_i,8)
+
+aobTopSpeedCalc_r:
+readmem(aobTopSpeedCalc_i,16)
+
+aobReverseTopSpeedCalc:
+readmem(aobReverseTopSpeedCalc_i,16)
+
+aobJJFuelCalc_r:
+readmem(aobJJFuelCalc_i,8)
+
+aobJJSpeedCalc_r:
+readmem(aobJJSpeedCalc_i,7)
+
+aobAmmoCalc_r:
+readmem(aobAmmoCalc_i,6)
+
+aobWeaponCooldownCalc_r:
+readmem(aobWeaponCooldownCalc_i,7)
+
+aobRecoilCalc_r:
+readmem(aobRecoilCalc_i,8)
+
+aobDamageCalc_r:
+readmem(aobDamageCalc_i,7)
+
+aobScanTimeCalc_r:
+readmem(aobScanTimeCalc_i,8)
+
+aobSensorRangeCalc1_r:
+readmem(aobSensorRangeCalc1_i,8)
+
+aobSensorRangeCalc2_r:
+readmem(aobSensorRangeCalc2_i,8)
+
+aobProjectileSpeedCalc_r:
+readmem(aobProjectileSpeedCalc_i,8)
+
+aobWeaponDamageCalc_r:
+readmem(aobWeaponDamageCalc_i,8)
+
+aobFactionDataGrabber_r:
+readmem(aobFactionDataGrabber_i,7)
+
+unregistersymbol(aobWeaponCountReader)
+unregistersymbol(aobContractDetailsGrabber2)
+unregistersymbol(aobReverseTopSpeedCalc)
+unregistersymbol(*)
+dealloc(*)
+
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>26716</ID>
+          <Description>"On Foot"</Description>
+          <Options moHideChildren="1"/>
+          <Color>4080FF</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>26717</ID>
+              <Description>"bEnableMoveSpeedMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableMoveSpeedMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26718</ID>
+                  <Description>"fMoveSpeedMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fMoveSpeedMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26719</ID>
+              <Description>"bEnableJumpSpeedMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableJumpSpeedMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26720</ID>
+                  <Description>"fJumpSpeedMod"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fJumpSpeedMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>26721</ID>
+          <Description>"In Computer"</Description>
+          <Options moHideChildren="1"/>
+          <Color>4080FF</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>26722</ID>
+              <Description>"bEnableMinCash"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableMinCash</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26723</ID>
+                  <Description>"iMinCash"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>iMinCash</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26724</ID>
+              <Description>"bEnablePilotSkillCapPatcher (hold CTRL while clicking in roster)"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnablePilotSkillCapPatcher</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26725</ID>
+                  <Description>"iMinPilotSkillCap"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>iMinPilotSkillCap</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26726</ID>
+              <Description>"bEnablePilotSkillXPPatcher (hold CTRL while clicking in roster)"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnablePilotSkillXPPatcher</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26727</ID>
+                  <Description>"iMinPilotSkillXP"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>iMinPilotSkillXP</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26728</ID>
+              <Description>"bEnableMechTonnageMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableMechTonnageMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26729</ID>
+                  <Description>"fMechTonnageMod"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fMechTonnageMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26730</ID>
+              <Description>"bEnableMinWeaponCount (use in mechbay only!)"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableMinWeaponCount</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26731</ID>
+                  <Description>"iMinWeaponCount"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>iMinWeaponCount</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26732</ID>
+              <Description>"bEnableMinEquipmentCount (use in mechbay only!)"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableMinEquipmentCount</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26733</ID>
+                  <Description>"iMinEquipmentCount"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>iMinEquipmentCount</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26734</ID>
+              <Description>"bEnableRefitCostMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableRefitCostMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26735</ID>
+                  <Description>"fRefitCostMod"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fRefitCostMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26736</ID>
+              <Description>"bEnableRefitTimeMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableRefitTimeMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26737</ID>
+                  <Description>"fRefitTimeMod"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fRefitTimeMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26738</ID>
+              <Description>"bEnableUpgradeTimeMod (enable only when upgrading!)"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableUpgradeTimeMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26739</ID>
+                  <Description>"fUpgradeTimeMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fUpgradeTimeMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26740</ID>
+              <Description>"iNegotiationPtsRemaining (change in game to refresh)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>[pContractNegPtsRemaining]</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26741</ID>
+              <Description>"bEnableDeployAnyTons"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableDeployAnyTons</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26742</ID>
+              <Description>"bEnableSalvageMaxer"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableSalvageMaxer</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26743</ID>
+              <Description>"bEnableInstantJobCompletion (be sure to save before use!)"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableInstantJobCompletion</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26744</ID>
+              <Description>"bEnablePassLessDays"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnablePassLessDays</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26745</ID>
+              <Description>"iDaysPassed (flip computer tabs to refresh)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>[pDaysPassed]+[iDaysPassedOffset]</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>26746</ID>
+          <Description>"In Mech"</Description>
+          <Options moHideChildren="1"/>
+          <Color>4080FF</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>26747</ID>
+              <Description>"bEnableNoRecoil"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableNoRecoil</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26748</ID>
+              <Description>"bEnableInfiniteAmmo"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableInfiniteAmmo</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26749</ID>
+              <Description>"bEnableGodMode"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Disabled
+1:Enabled
+</DropDownList>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableGodMode</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26750</ID>
+              <Description>"bEnableDamageMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableDamageMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26751</ID>
+                  <Description>"fDamageMod"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fDamageMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26752</ID>
+              <Description>"bEnableMechCooldownMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableMechCooldownMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26753</ID>
+                  <Description>"fMechCooldownMod"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fMechCooldownMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26754</ID>
+              <Description>"bEnableWeaponDamageMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableWeaponDamageMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26755</ID>
+                  <Description>"fWeaponDamageMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fWeaponDamageMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26756</ID>
+              <Description>"bEnableWeaponCooldownMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableWeaponCooldownMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26757</ID>
+                  <Description>"fWeaponCooldownMod"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fWeaponCooldownMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26758</ID>
+              <Description>"bEnableProjectileSpeedMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableProjectileSpeedMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26759</ID>
+                  <Description>"fProjectileSpeedMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fProjectileSpeedMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26760</ID>
+              <Description>"bEnableTopSpeedMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableTopSpeedMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26761</ID>
+                  <Description>"fTopSpeedMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fTopSpeedMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26762</ID>
+              <Description>"bEnableInfiniteJumpJet"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableInfiniteJumpJet</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26763</ID>
+              <Description>"bEnableJumpJetVerticalSpeedMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableJumpJetVerticalSpeedMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26764</ID>
+                  <Description>"fJumpJetVerticalSpeedMod"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fJumpJetVerticalSpeedMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26765</ID>
+              <Description>"bEnableJumpJetForwardSpeedMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableJumpJetForwardSpeedMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26766</ID>
+                  <Description>"fJumpJetForwardSpeedMod"</Description>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fJumpJetForwardSpeedMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26767</ID>
+              <Description>"bEnableSensorRangeMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableSensorRangeMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26768</ID>
+                  <Description>"fSensorRangeMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fSensorRangeMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26769</ID>
+              <Description>"bEnableScanSpeedMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableScanSpeedMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26770</ID>
+                  <Description>"fScanSpeedMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fScanSpeedMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>26771</ID>
+          <Description>"Lancemates in Mech"</Description>
+          <Options moHideChildren="1"/>
+          <Color>4080FF</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>26772</ID>
+              <Description>"bEnableLancemateInfiniteAmmo"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableLancemateInfiniteAmmo</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26773</ID>
+              <Description>"bEnableLancemateGodMode"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Disabled
+1:Enabled
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableLancemateGodMode</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26774</ID>
+              <Description>"bEnableLancemateDamageMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableLancemateDamageMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26775</ID>
+                  <Description>"fLancemateDamageMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fLancemateDamageMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26776</ID>
+              <Description>"bEnableLancemateMechCooldownMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableLancemateMechCooldownMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26777</ID>
+                  <Description>"fLancemateMechCooldownMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fLancemateMechCooldownMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26778</ID>
+              <Description>"bEnableLancemateWeaponDamageMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableLancemateWeaponDamageMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26779</ID>
+                  <Description>"fLancemateWeaponDamageMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fLancemateWeaponDamageMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26780</ID>
+              <Description>"bEnableLancemateWeaponCooldownMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableLancemateWeaponCooldownMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26781</ID>
+                  <Description>"fLancemateWeaponCooldownMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fLancemateWeaponCooldownMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26782</ID>
+              <Description>"bEnableLancemateProjectileSpeedMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableLancemateProjectileSpeedMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26783</ID>
+                  <Description>"fLancemateProjectileSpeedMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fLancemateProjectileSpeedMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26784</ID>
+              <Description>"bEnableLancemateTopSpeedMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableLancemateTopSpeedMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26785</ID>
+                  <Description>"fLancemateTopSpeedMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fLancemateTopSpeedMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26786</ID>
+              <Description>"bEnableLancemateSensorRangeMod"</Description>
+              <DropDownListLink>bEnableGodMode</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>008000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bEnableLancemateSensorRangeMod</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26787</ID>
+                  <Description>"fLancemateSensorRangeMod"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fLancemateSensorRangeMod</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>26869</ID>
+          <Description>"Faction Standings (flip to Ops tab to refresh)"</Description>
+          <Options moHideChildren="1"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <Color>4080FF</Color>
+          <GroupHeader>1</GroupHeader>
+          <Address>[[pFactionData]+[iFactionDataOffset]]</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>26870</ID>
+              <Description>"Faction[0]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*0</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26871</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26872</ID>
+              <Description>"Faction[1]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*1</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26873</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26874</ID>
+              <Description>"Faction[2]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*2</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26875</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26876</ID>
+              <Description>"Faction[3]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*3</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26877</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26878</ID>
+              <Description>"Faction[4]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*4</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26879</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26880</ID>
+              <Description>"Faction[5]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*5</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26881</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26882</ID>
+              <Description>"Faction[6]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*6</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26883</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26884</ID>
+              <Description>"Faction[7]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*7</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26885</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26886</ID>
+              <Description>"Faction[8]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*8</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26887</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26888</ID>
+              <Description>"Faction[9]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*9</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26889</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26890</ID>
+              <Description>"Faction[10]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*A</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26891</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26892</ID>
+              <Description>"Faction[11]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*B</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26893</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26894</ID>
+              <Description>"Faction[12]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*C</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26895</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26896</ID>
+              <Description>"Faction[13]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*D</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26897</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26898</ID>
+              <Description>"Faction[14]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*E</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26899</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>26900</ID>
+              <Description>"Faction[15]"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1898:Bandits
+1928:House Davion
+2014:Independents
+2027:Interstellar Expeditions
+2040:House Kurita
+2044:House Liao
+2055:Magistracy of Canopus
+2074:House Marik
+2078:Mercenaries
+2136:Outlaws
+2141:Outworlds Alliance
+2151:Periphery Realms
+2177:House Steiner
+2190:Taurian Concordat
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>0000FF</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08+14*F</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>26901</ID>
+                  <Description>"Standing"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+08</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26902</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1D4132DD53C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26903</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1D35B4D472C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26904</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1D3667448E0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26905</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1D39CBD351C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26906</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1D39CBD3524</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26907</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1D412FA3A40</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26908</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1D412FA3AB8</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26909</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1D46A15D9EC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26910</ID>
+      <Description>"WeaponCount=100"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"MechWarrior-Win64-Shipping.exe"+FECD56) 
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+mov [rcx+rax+24],(int)100
+
+originalcode:
+dec [rcx+rax+24]
+mov r10,[r15+08]
+
+exit:
+jmp returnhere
+
+"MechWarrior-Win64-Shipping.exe"+FECD56:
+jmp newmem
+nop 3
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"MechWarrior-Win64-Shipping.exe"+FECD56:
+db FF 4C 01 24 4D 8B 57 08
+//dec [rcx+rax+24]
+//mov r10,[r15+08]
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <LuaScript>PROCESS_NAME = 'MechWarrior-Win64-Shipping.exe'
+--------
+-------- Check for process and auto attach if need be
+--------
+local autoAttachTimer = nil          ---- Declaration for our static timer object (no destroy here!)
+local autoAttachTimerInterval = 5000 ---- Timer in milliseconds
+
+function clearUserDefinedSymbols()
+	local mv,sf = getMemoryViewForm()
+	if not mv.frmSymbolhandler then
+		local mvHidden
+		if not mv.Visible then mvHidden=true,mv.Show() end
+		mv.miuserdefinedsymbols:OnClick()
+		if mvHidden then mv.hide()end
+		sf = mv.frmSymbolhandler
+		sf.Hide()
+	else
+		sf = mv.frmSymbolhandler
+	end
+	if sf ~= nil then
+		local symbol
+		for i = sf.Listview1.Items.Count - 1, 0, -1 do
+			symbol = sf.Listview1.Items.Item[i].Caption
+			unregisterSymbol(symbol)
+		end
+	end
+end
+
+local function autoAttachTimer_tick(timer) ---- Timer callback
+	---- Check to see if we are attached to the right process
+	if getProcessIDFromProcessName(PROCESS_NAME) ~= getOpenedProcessID() then
+		---- If not the right process, check if process is running and attach if exists
+		AddressList.disableAllWithoutExecute()
+		clearUserDefinedSymbols()
+		if getProcessIDFromProcessName(PROCESS_NAME) ~= nil then
+			openProcess(PROCESS_NAME) ---- Open the process
+		end
+	end
+end
+
+autoAttachTimer = createTimer(getMainForm())       ---- Create timer with the main form as it's parent
+autoAttachTimer.Interval = autoAttachTimerInterval ---- Set timer interval
+autoAttachTimer.OnTimer = autoAttachTimer_tick     ---- Set timer tick call back
+
+</LuaScript>
+</CheatTable>
