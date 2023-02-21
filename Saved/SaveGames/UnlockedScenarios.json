@@ -14,6 +14,9 @@
 		},
 		{
 			"ScenarioId": "MWScenarioSpecificationAsset:A2M1_InfernoCaptain1_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:BattleMap_05_Scenario"
 		}
 	]
 }

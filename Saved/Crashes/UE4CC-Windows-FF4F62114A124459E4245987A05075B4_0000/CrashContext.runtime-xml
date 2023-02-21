@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FGenericCrashContext>
+<RuntimeProperties>
+<CrashVersion>3</CrashVersion>
+<ExecutionGuid>D35F44DE4A929F12FAABC59C873161EA</ExecutionGuid>
+<CrashGUID>UE4CC-Windows-FF4F62114A124459E4245987A05075B4_0000</CrashGUID>
+<IsEnsure>false</IsEnsure>
+<IsAssert>true</IsAssert>
+<CrashType>Assert</CrashType>
+<ErrorMessage>LowLevelFatalError [File:Unknown] [Line: 3146] 
+Could not find SuperStruct EventOnCooldownTriggered to create EventOnCooldownTriggered
+
+
+</ErrorMessage>
+<CrashReporterMessage></CrashReporterMessage>
+<ProcessId>5412</ProcessId>
+<SecondsSinceStart>0</SecondsSinceStart>
+<IsInternalBuild>false</IsInternalBuild>
+<IsPerforceBuild>false</IsPerforceBuild>
+<IsSourceDistribution>false</IsSourceDistribution>
+<GameName>UE4-MW5Mercs</GameName>
+<ExecutableName>MechWarrior-Win64-Shipping</ExecutableName>
+<BuildConfiguration>Shipping</BuildConfiguration>
+<GameSessionID></GameSessionID>
+<Symbols>**UE4*Release-4.26-CL-0-Win64-Shipping</Symbols>
+<PlatformName>WindowsNoEditor</PlatformName>
+<PlatformNameIni>Windows</PlatformNameIni>
+<EngineMode>Game</EngineMode>
+<EngineModeEx>Unset</EngineModeEx>
+<DeploymentName></DeploymentName>
+<EngineVersion>4.26.2-0+++UE4+Release-4.26</EngineVersion>
+<CommandLine> MW5Mercs</CommandLine>
+<LanguageLCID>0</LanguageLCID>
+<AppDefaultLocale>ko-KR</AppDefaultLocale>
+<BuildVersion>++UE4+Release-4.26-CL-0</BuildVersion>
+<IsUE4Release>true</IsUE4Release>
+<IsRequestingExit>false</IsRequestingExit>
+<UserName></UserName>
+<BaseDir>E:/GAMES/MechWarrior 5 Mercenaries/MW5Mercs/Binaries/Win64/</BaseDir>
+<RootDir>E:/GAMES/MechWarrior 5 Mercenaries/</RootDir>
+<MachineId>966331264B4B16370D994A9F625E4B2D</MachineId>
+<LoginId>966331264b4b16370d994a9f625e4b2d</LoginId>
+<EpicAccountId>3e7b1109fa6d429fa7b4e9dadfbbf38f</EpicAccountId>
+<SourceContext></SourceContext>
+<UserDescription></UserDescription>
+<UserActivityHint></UserActivityHint>
+<CrashDumpMode>0</CrashDumpMode>
+<GameStateName></GameStateName>
+<Misc.NumberOfCores>6</Misc.NumberOfCores>
+<Misc.NumberOfCoresIncludingHyperthreads>12</Misc.NumberOfCoresIncludingHyperthreads>
+<Misc.Is64bitOperatingSystem>1</Misc.Is64bitOperatingSystem>
+<Misc.CPUVendor>AuthenticAMD</Misc.CPUVendor>
+<Misc.CPUBrand>AMD Ryzen 5 5600X 6-Core Processor             </Misc.CPUBrand>
+<Misc.PrimaryGPUBrand>NVIDIA GeForce GTX 1660 Ti</Misc.PrimaryGPUBrand>
+<Misc.OSVersionMajor>Windows 10 (Release 2009)</Misc.OSVersionMajor>
+<Misc.OSVersionMinor></Misc.OSVersionMinor>
+<MemoryStats.TotalPhysical>34281717760</MemoryStats.TotalPhysical>
+<MemoryStats.TotalVirtual>140737488224256</MemoryStats.TotalVirtual>
+<MemoryStats.PageSize>4096</MemoryStats.PageSize>
+<MemoryStats.TotalPhysicalGB>32</MemoryStats.TotalPhysicalGB>
+<MemoryStats.AvailablePhysical>28168527872</MemoryStats.AvailablePhysical>
+<MemoryStats.AvailableVirtual>48603127808</MemoryStats.AvailableVirtual>
+<MemoryStats.UsedPhysical>1151291392</MemoryStats.UsedPhysical>
+<MemoryStats.PeakUsedPhysical>1181876224</MemoryStats.PeakUsedPhysical>
+<MemoryStats.UsedVirtual>1303961600</MemoryStats.UsedVirtual>
+<MemoryStats.PeakUsedVirtual>1316913152</MemoryStats.PeakUsedVirtual>
+<MemoryStats.bIsOOM>0</MemoryStats.bIsOOM>
+<MemoryStats.OOMAllocationSize>0</MemoryStats.OOMAllocationSize>
+<MemoryStats.OOMAllocationAlignment>0</MemoryStats.OOMAllocationAlignment>
+<NumMinidumpFramesToIgnore>4</NumMinidumpFramesToIgnore>
+<CallStack></CallStack>
+<PCallStack>
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1459336         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 143eac3         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1458502         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1463f69         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1463345         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 145a480         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1477d42         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 2e4f885         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + f2cf8e          
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 28c3145         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 2e9845b         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 2a89e50         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 77dabc          
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 784c51          
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 784d7a          
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 78ee7f          
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 39259fe         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</PCallStack>
+<PCallStackHash>373F513C25E267D9C7F6069F3DAB16F5E258CE30</PCallStackHash>
+<Threads><Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1407400         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 393039e         
+VCRUNTIME140                0x00007ffa60590000 + efc0            
+ntdll                       0x00007ffa91770000 + a241f           
+ntdll                       0x00007ffa91770000 + 514a4           
+ntdll                       0x00007ffa91770000 + 511f5           
+KERNELBASE                  0x00007ffa8f240000 + 2cd29           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1407386         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 139adcd         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1449e1d         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1459336         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 143eac3         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1458502         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1463f69         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1463345         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 145a480         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1477d42         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 2e4f885         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + f2cf8e          
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 28c3145         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 2e9845b         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 2a89e50         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 77dabc          
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 784c51          
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 784d7a          
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 78ee7f          
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 39259fe         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>true</IsCrashed>
+<Registers></Registers>
+<ThreadID>5528</ThreadID>
+<ThreadName>GameThread</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>6096</ThreadID>
+<ThreadName>TaskGraphThreadNP 0</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>5764</ThreadID>
+<ThreadName>TaskGraphThreadNP 1</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>5768</ThreadID>
+<ThreadName>TaskGraphThreadNP 2</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>7068</ThreadID>
+<ThreadName>TaskGraphThreadNP 3</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>7072</ThreadID>
+<ThreadName>TaskGraphThreadNP 4</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>14268</ThreadID>
+<ThreadName>TaskGraphThreadNP 5</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>6920</ThreadID>
+<ThreadName>TaskGraphThreadNP 6</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>14276</ThreadID>
+<ThreadName>TaskGraphThreadNP 7</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>7220</ThreadID>
+<ThreadName>TaskGraphThreadNP 8</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>17344</ThreadID>
+<ThreadName>TaskGraphThreadNP 9</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18568</ThreadID>
+<ThreadName>TaskGraphThreadHP 10</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18572</ThreadID>
+<ThreadName>TaskGraphThreadHP 11</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18296</ThreadID>
+<ThreadName>TaskGraphThreadHP 12</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>13128</ThreadID>
+<ThreadName>TaskGraphThreadHP 13</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>16452</ThreadID>
+<ThreadName>TaskGraphThreadHP 14</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>11536</ThreadID>
+<ThreadName>TaskGraphThreadHP 15</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>17284</ThreadID>
+<ThreadName>TaskGraphThreadHP 16</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>9936</ThreadID>
+<ThreadName>TaskGraphThreadHP 17</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>8444</ThreadID>
+<ThreadName>TaskGraphThreadHP 18</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>12996</ThreadID>
+<ThreadName>TaskGraphThreadHP 19</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>16464</ThreadID>
+<ThreadName>TaskGraphThreadBP 20</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>12488</ThreadID>
+<ThreadName>TaskGraphThreadBP 21</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>12192</ThreadID>
+<ThreadName>TaskGraphThreadBP 22</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>15668</ThreadID>
+<ThreadName>TaskGraphThreadBP 23</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>9868</ThreadID>
+<ThreadName>TaskGraphThreadBP 24</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18284</ThreadID>
+<ThreadName>TaskGraphThreadBP 25</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18708</ThreadID>
+<ThreadName>TaskGraphThreadBP 26</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>19016</ThreadID>
+<ThreadName>TaskGraphThreadBP 27</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18112</ThreadID>
+<ThreadName>TaskGraphThreadBP 28</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad671         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12afa4c         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18232</ThreadID>
+<ThreadName>TaskGraphThreadBP 29</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>15824</ThreadID>
+<ThreadName>PoolThread 0</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18240</ThreadID>
+<ThreadName>PoolThread 1</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18292</ThreadID>
+<ThreadName>PoolThread 2</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18608</ThreadID>
+<ThreadName>PoolThread 3</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18724</ThreadID>
+<ThreadName>PoolThread 4</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18076</ThreadID>
+<ThreadName>PoolThread 5</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18280</ThreadID>
+<ThreadName>PoolThread 6</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>10768</ThreadID>
+<ThreadName>PoolThread 7</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18120</ThreadID>
+<ThreadName>PoolThread 8</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18564</ThreadID>
+<ThreadName>PoolThread 9</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>11016</ThreadID>
+<ThreadName>PoolThread 10</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>8656</ThreadID>
+<ThreadName>PoolThread 11</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d744           
+KERNELBASE                  0x00007ffa8f240000 + 4b16e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 21a76f6         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18600</ThreadID>
+<ThreadName>HttpManagerThread</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + b8c1e6          
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18584</ThreadID>
+<ThreadName>OnlineAsyncTaskThreadSteam DefaultInstance</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>19268</ThreadID>
+<ThreadName>PoolThread 12</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+KERNELBASE                  0x00007ffa8f240000 + 35975           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1406da6         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12c74b4         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12b8f43         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd48         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>19296</ThreadID>
+<ThreadName>PoolThread 13</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+KERNELBASE                  0x00007ffa8f240000 + 35975           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1406da6         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12c74b4         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12b8f43         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd48         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18992</ThreadID>
+<ThreadName>PoolThread 14</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>19280</ThreadID>
+<ThreadName>PoolThread 15</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad52b         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 235f180         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>19140</ThreadID>
+<ThreadName>RHIThread</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad52b         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 235e622         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 235f1c3         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>1908</ThreadID>
+<ThreadName>RenderThread 0</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d744           
+KERNELBASE                  0x00007ffa8f240000 + 4b16e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141822a         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 235f2e7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18796</ThreadID>
+<ThreadName>RTHeartBeat 0</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 27aa3cc         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>18952</ThreadID>
+<ThreadName>FMediaTicker</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d744           
+KERNELBASE                  0x00007ffa8f240000 + 4b16e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141822a         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 27f05da         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>5000</ThreadID>
+<ThreadName>SlateLoadingThread1</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>5080</ThreadID>
+<ThreadName>PoolThread 16</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>5732</ThreadID>
+<ThreadName>PoolThread 17</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>13712</ThreadID>
+<ThreadName>PoolThread 18</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>7212</ThreadID>
+<ThreadName>PoolThread 19</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>8012</ThreadID>
+<ThreadName>PoolThread 20</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12fdd2f         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>7216</ThreadID>
+<ThreadName>PoolThread 21</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d744           
+KERNELBASE                  0x00007ffa8f240000 + 4b16e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141822a         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 2ea40d1         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>14064</ThreadID>
+<ThreadName>ScreenSaverInhibitor</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 26b4345         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>16328</ThreadID>
+<ThreadName>AudioMixerRenderThread(1)</ThreadName>
+</Thread>
+<Thread><CallStack>ntdll                       0x00007ffa91770000 + 9d144           
+KERNELBASE                  0x00007ffa8f240000 + 2306e           
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 141900e         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 12ad52b         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 2911840         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 14179b7         
+MechWarrior-Win64-Shipping  0x00007ff69f580000 + 1412fe1         
+KERNEL32                    0x00007ffa90430000 + 17614           
+ntdll                       0x00007ffa91770000 + 526a1           
+</CallStack>
+<IsCrashed>false</IsCrashed>
+<Registers></Registers>
+<ThreadID>16336</ThreadID>
+<ThreadName>AudioThread</ThreadName>
+</Thread>
+</Threads>
+</RuntimeProperties>
+<PlatformProperties>
+<PlatformIsRunningWindows>1</PlatformIsRunningWindows>
+<IsRunningOnBattery>false</IsRunningOnBattery>
+<PlatformCallbackResult>0</PlatformCallbackResult>
+</PlatformProperties>
+<EngineData>
+<RHI.IsGPUOverclocked>false</RHI.IsGPUOverclocked>
+<RHI.RHIName>D3D11</RHI.RHIName>
+<RHI.AdapterName>NVIDIA GeForce GTX 1660 Ti</RHI.AdapterName>
+<RHI.UserDriverVersion>472.84</RHI.UserDriverVersion>
+<RHI.InternalDriverVersion>30.0.14.7284</RHI.InternalDriverVersion>
+<RHI.DriverDate>12-6-2021</RHI.DriverDate>
+<RHI.FeatureLevel>SM5</RHI.FeatureLevel>
+</EngineData>
+<GameData>
+</GameData>
+</FGenericCrashContext>
