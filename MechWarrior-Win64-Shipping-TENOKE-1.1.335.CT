@@ -2908,54 +2908,6 @@ dealloc(*)
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
-      <ID>26902</ID>
-      <Description>"No description"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>1D4132DD53C</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>26903</ID>
-      <Description>"No description"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>1D35B4D472C</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>26904</ID>
-      <Description>"No description"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>1D3667448E0</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>26905</ID>
-      <Description>"No description"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>1D39CBD351C</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>26906</ID>
-      <Description>"No description"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>1D39CBD3524</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>26907</ID>
-      <Description>"No description"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>1D412FA3A40</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>26908</ID>
-      <Description>"No description"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>1D412FA3AB8</Address>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>26909</ID>
-      <Description>"No description"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>1D46A15D9EC</Address>
-    </CheatEntry>
-    <CheatEntry>
       <ID>26910</ID>
       <Description>"WeaponCount=100"</Description>
       <VariableType>Auto Assembler Script</VariableType>
