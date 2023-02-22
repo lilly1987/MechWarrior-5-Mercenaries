@@ -20,6 +20,39 @@
 		},
 		{
 			"ScenarioId": "MWScenarioSpecificationAsset:DLC1_HM1_GeneratedMission_1_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:DLC1_HM1_GeneratedMission_2_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:A2M2_Port_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:DLC1_HM2_GeneratedMission_1_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:DLC1_HM2_GeneratedMission_2_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:DLC1_HM2_GeneratedMission_3_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:D1M_Fog_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:DLC1_HM6_GeneratedMission_1_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:DLC1_HM6_GeneratedMission_2_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:DLC1_HM6_GeneratedMission_3_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:D1M_Effect_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:A2M3_Zombie_Scenario"
 		}
 	]
 }
