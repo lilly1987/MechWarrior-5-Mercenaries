@@ -17,6 +17,9 @@
 		},
 		{
 			"ScenarioId": "MWScenarioSpecificationAsset:BattleMap_05_Scenario"
+		},
+		{
+			"ScenarioId": "MWScenarioSpecificationAsset:DLC1_HM1_GeneratedMission_1_Scenario"
 		}
 	]
 }

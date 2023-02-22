@@ -18,7 +18,6 @@ getHotkeyHandlerThread().State='htsActive'
     <CheatEntry>
       <ID>26651</ID>
       <Description>"Mechwarrior 5 1.1.335 AOB script"</Description>
-      <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript Async="1">// Game Executable   : MechWarrior-Win64-Shipping.exe
 // Author            : Cs
@@ -596,19 +595,19 @@ dd (float)1.5
 bEnableMinCash:
 dd 1
 iMinCash:
-dq (int)10000000
+dq (int)100000000
 bEnablePilotSkillCapPatcher:
 dd 1
 iMinPilotSkillCap:
 dd (int)10
 bEnablePilotSkillXPPatcher:
-dd 0
+dd 1
 iMinPilotSkillXP:
 dd (int)5000
 bEnableMechTonnageMod:
 dd 1
 fMechTonnageMod:
-dd (float)0.2
+dd (float)0.5
 bEnableMinWeaponCount:
 dd 0
 iMinWeaponCount:
@@ -626,7 +625,7 @@ dd 1
 fRefitTimeMod:
 dd (float)0.0
 bEnableUpgradeTimeMod:
-dd 0
+dd 1
 fUpgradeTimeMod:
 dd (float)0.0
 bEnableDeployAnyTons:
@@ -1766,7 +1765,6 @@ dealloc(*)
         <CheatEntry>
           <ID>26721</ID>
           <Description>"In Computer"</Description>
-          <Options moHideChildren="1"/>
           <Color>4080FF</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
